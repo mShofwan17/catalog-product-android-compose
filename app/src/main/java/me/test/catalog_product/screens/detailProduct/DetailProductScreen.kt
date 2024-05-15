@@ -129,7 +129,8 @@ fun DetailProductContent(
             HorizontalDivider(
                 modifier = Modifier
                     .padding(top = 24.dp, start = 16.dp, end = 16.dp),
-                thickness = 1.dp
+                thickness = 1.dp,
+                color = Color.LightGray
             )
 
             Row(
@@ -175,7 +176,8 @@ fun DetailProductContent(
             HorizontalDivider(
                 modifier = Modifier
                     .padding(top = 16.dp, start = 16.dp, end = 16.dp),
-                thickness = 1.dp
+                thickness = 1.dp,
+                color = Color.LightGray
             )
 
             item.description?.let {
@@ -194,7 +196,8 @@ fun DetailProductContent(
             HorizontalDivider(
                 modifier = Modifier
                     .padding(top = 16.dp, start = 16.dp, end = 16.dp),
-                thickness = 1.dp
+                thickness = 1.dp,
+                color = Color.LightGray
             )
         }
 
@@ -207,7 +210,8 @@ fun DetailProductContent(
             addToWishlistState.ShowUIComposable(
                 onLoading = {
                     CircularProgressIndicator(
-                        modifier = Modifier.wrapContentWidth()
+                        modifier = Modifier
+                            .wrapContentWidth()
                             .wrapContentHeight()
                             .align(Alignment.BottomCenter),
                         color = Color.Black
