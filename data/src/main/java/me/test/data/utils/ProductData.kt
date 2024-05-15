@@ -1,4 +1,4 @@
-package me.test.data
+package me.test.data.utils
 
 val jsonProducts = """
     [

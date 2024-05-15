@@ -1,6 +1,6 @@
 package me.test.data.models
 
-import me.test.data.isFavourite
+import me.test.data.utils.toEntityFavourite
 import me.test.roomdb.entity.ProductEntity
 
 data class Product(
@@ -20,7 +20,7 @@ data class Product(
             price = price,
             description = description,
             imageUrl = imageUrl,
-            isFavourite = isFavourite?.isFavourite()
+            isFavourite = isFavourite?.toEntityFavourite()
         )
     }
 }

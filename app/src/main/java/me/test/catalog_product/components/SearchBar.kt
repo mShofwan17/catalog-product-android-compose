@@ -89,7 +89,10 @@ fun CatalogSearchBar(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp)
-                .clip(shape = RoundedCornerShape(10.dp)),
+                .clip(shape = RoundedCornerShape(10.dp))
+                .semantics {
+                    contentDescription = "CatalogSearchBar"
+                },
             colors = CardDefaults.cardColors(
                 containerColor = Color.White,
                 contentColor = Color.White
@@ -99,7 +102,7 @@ fun CatalogSearchBar(
                 modifier = Modifier
                     .fillMaxWidth()
                     .semantics {
-                        contentDescription = "TextField"
+                        contentDescription = "SearchTextField"
                     },
                 value = text,
                 onValueChange = { onTextChange(it) },

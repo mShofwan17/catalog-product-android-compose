@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import me.test.data.jsonProducts
+import me.test.data.utils.jsonProducts
 import me.test.data.models.Product
 import me.test.data.models.toProduct
 import me.test.roomdb.CatalogProductDatabase

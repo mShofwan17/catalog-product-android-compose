@@ -21,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,7 +39,8 @@ fun ListGridContent(
     onItemClick: (UiListProduct) -> Unit
 ) {
     LazyVerticalGrid(
-        modifier = modifier,
+        modifier = modifier
+            .semantics { contentDescription = "ListContent" },
         columns = GridCells.Fixed(2)
     ) {
         items(items.size) {
@@ -66,7 +69,8 @@ fun ItemProduct(
             .fillMaxWidth()
             .wrapContentHeight()
             .clip(shape = RoundedCornerShape(12.dp))
-            .clickable { onClick.invoke(item) },
+            .clickable { onClick.invoke(item) }
+            .semantics { contentDescription = "ItemProduct" },
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
             contentColor = Color.White

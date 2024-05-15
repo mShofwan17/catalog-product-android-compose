@@ -3,7 +3,6 @@ agp = "8.3.0"
 org-jetbrains-kotlin-android = "1.8.0"
 ksp = "1.8.10-1.0.9"
 hiltAndroidGradlePlugin = "2.50"
-hiltAndroidGradlePluginVersion = "2.50"
 kotlin = "1.9.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
@@ -22,13 +21,13 @@ hiltCompose = "1.2.0"
 coroutinesTest = "1.7.3"
 coilCompose = "2.4.0"
 material3 = "1.2.1"
+navigationTesting = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidGradlePlugin" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
-hilt-android-gradle-plugin-v247 = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -54,6 +53,7 @@ viewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", 
 coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

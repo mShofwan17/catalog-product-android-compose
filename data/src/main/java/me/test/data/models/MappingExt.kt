@@ -1,6 +1,6 @@
 package me.test.data.models
 
-import me.test.data.isFavourite
+import me.test.data.utils.toUiFavourite
 import me.test.roomdb.entity.ProductEntity
 
 fun ProductEntity.toProduct(): Product {
@@ -12,7 +12,7 @@ fun ProductEntity.toProduct(): Product {
             price = price,
             description = description,
             imageUrl = imageUrl,
-            isFavourite = isFavourite?.isFavourite()
+            isFavourite = isFavourite?.toUiFavourite()
         )
     }
 }
