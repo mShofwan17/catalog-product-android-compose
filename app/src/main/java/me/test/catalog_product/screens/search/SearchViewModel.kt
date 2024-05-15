@@ -1,5 +1,6 @@
 package me.test.catalog_product.screens.search
 
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,18 +18,24 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchViewModel @Inject constructor(
     private val searchProductsUseCase: SearchProductsUseCase
-): ViewModel() {
+) : ViewModel() {
     private val _products = MutableStateFlow(UiState<List<UiListProduct>>())
     val productsSearch get() = _products.asStateFlow()
 
+    private val _searchQuery = mutableStateOf("")
+    val searchQuery = _searchQuery
 
-     fun getProductsSearch(name: String){
+    fun updateSearchQuery(query: String) {
+        _searchQuery.value = query
+    }
+
+    fun getProductsSearch(name: String) {
         viewModelScope.launch {
             searchProductsUseCase(name).collectLatest { result ->
                 _products.update {
-                    when(result){
+                    when (result) {
                         is ResponseState.Loading -> it.loading()
-                        is ResponseState.Success ->  it.success(result.data)
+                        is ResponseState.Success -> it.success(result.data)
                         is ResponseState.Error -> it.error(result.message)
                     }
                 }

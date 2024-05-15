@@ -6,17 +6,17 @@ data class UiState<T>(
     val isLoading: Boolean = false,
     val data: T? = null,
     val message: String? = null
-){
+) {
 
     fun showUI(
         onLoading: () -> Unit = {},
         onSuccess: (data: T) -> Unit,
         onError: (message: String) -> Unit
-    ){
-        if (!isLoading){
+    ) {
+        if (!isLoading) {
             data?.let(onSuccess)
             message?.let(onError)
-        }else{
+        } else {
             onLoading.invoke()
         }
     }
@@ -25,18 +25,19 @@ data class UiState<T>(
     fun ShowUIComposable(
         onInit: @Composable () -> Unit = {},
         onLoading: @Composable () -> Unit = {},
-        onSuccess:@Composable (data: T) -> Unit,
-        onError:@Composable (message: String) -> Unit
-    ){
-        if (!isLoading){
+        onSuccess: @Composable (data: T) -> Unit,
+        onError: @Composable (message: String) -> Unit
+    ) {
+        if (!isLoading) {
             data?.let { onSuccess.invoke(it) }
-            message?.let{onError.invoke(it)}
+            message?.let { onError.invoke(it) }
             onInit.invoke()
-        }else{
+        } else {
             onLoading.invoke()
         }
     }
-    fun loading() : UiState<T>{
+
+    fun loading(): UiState<T> {
         return this.copy(
             isLoading = true,
             data = null,
@@ -44,7 +45,7 @@ data class UiState<T>(
         )
     }
 
-    fun success(data: T?) : UiState<T>{
+    fun success(data: T?): UiState<T> {
         return this.copy(
             isLoading = false,
             data = data,
@@ -52,7 +53,7 @@ data class UiState<T>(
         )
     }
 
-    fun error(message: String?) : UiState<T>{
+    fun error(message: String?): UiState<T> {
         return this.copy(
             isLoading = false,
             data = null,

@@ -12,9 +12,12 @@ import javax.inject.Inject
 class AddToWishlistUseCase @Inject constructor(
     private val repository: WishlistRepository
 ) : BaseUseCase() {
-    suspend operator fun invoke(id: Long, isFavourite: Boolean): Flow<ResponseState<UiDetailProduct>> {
+    suspend operator fun invoke(
+        id: Long,
+        isFavourite: Boolean
+    ): Flow<ResponseState<UiDetailProduct>> {
         return doFlow {
-            val result = repository.addToWishlist(id,isFavourite)
+            val result = repository.addToWishlist(id, isFavourite)
             delay(1000L)
             emit(ResponseState.Success(result.toDetailProduct()))
         }

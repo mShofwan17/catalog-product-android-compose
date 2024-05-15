@@ -16,8 +16,15 @@ abstract class CatalogProductDatabase : RoomDatabase() {
     companion object {
         fun create(context: Context, useInMemory: Boolean): CatalogProductDatabase {
             val dbBuilder =
-                if (useInMemory) Room.inMemoryDatabaseBuilder(context, CatalogProductDatabase::class.java)
-                else Room.databaseBuilder(context, CatalogProductDatabase::class.java, "test_database.db")
+                if (useInMemory) Room.inMemoryDatabaseBuilder(
+                    context,
+                    CatalogProductDatabase::class.java
+                )
+                else Room.databaseBuilder(
+                    context,
+                    CatalogProductDatabase::class.java,
+                    "test_database.db"
+                )
             return dbBuilder.fallbackToDestructiveMigration().build()
         }
     }

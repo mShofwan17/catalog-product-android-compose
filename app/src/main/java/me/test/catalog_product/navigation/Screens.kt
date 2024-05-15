@@ -10,8 +10,6 @@ sealed class Screens(val route: String) {
             return "$DETAIL_PRODUCT/$id"
         }
     }
-
-    data object Wishlist : Screens(UiConstant.ScreenConst.WISHLIST)
     data object Search : Screens(UiConstant.ScreenConst.SEARCH)
 
 }

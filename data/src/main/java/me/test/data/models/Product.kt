@@ -11,8 +11,8 @@ data class Product(
     val description: String?,
     val imageUrl: String?,
     val isFavourite: Boolean?
-){
-    fun toEntity() : ProductEntity {
+) {
+    fun toEntity(): ProductEntity {
         return ProductEntity(
             id = id,
             name = name,

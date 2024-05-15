@@ -50,7 +50,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-     fun getProductsWishlist() {
+    fun getProductsWishlist() {
         viewModelScope.launch {
             getWishlistsUseCase().collectLatest { result ->
                 _products.update {

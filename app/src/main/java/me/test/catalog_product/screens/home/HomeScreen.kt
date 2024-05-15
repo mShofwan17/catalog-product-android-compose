@@ -24,6 +24,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,7 +33,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import me.test.catalog_product.components.CatalogSearchBar
+import me.test.catalog_product.R
+import me.test.catalog_product.components.CatalogSearchBarView
 import me.test.catalog_product.components.ListGridContent
 import me.test.catalog_product.navigation.Screens
 
@@ -51,9 +53,9 @@ fun HomeScreen(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        CatalogSearchBar(
+        CatalogSearchBarView(
             modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
-            onClick = { }
+            onClick = { navHostController.navigate(Screens.Search.route) }
         )
 
         Row(
@@ -65,14 +67,14 @@ fun HomeScreen(
         ) {
             Column {
                 Text(
-                    text = "Sneakers",
+                    text = stringResource(id = R.string.app_name),
                     style = MaterialTheme.typography.displaySmall,
                     fontWeight = FontWeight.SemiBold
                 )
 
                 Text(
                     modifier = Modifier.padding(top = 2.dp),
-                    text = "${countProduct.value} produk tersedia"
+                    text = stringResource(R.string.produk_tersedia, countProduct.value)
                 )
             }
 
@@ -87,7 +89,7 @@ fun HomeScreen(
                     },
                 imageVector = if (showWishlist) Icons.Default.Favorite
                 else Icons.Default.FavoriteBorder,
-                contentDescription = "ic_fav"
+                contentDescription = stringResource(R.string.ic_fav)
             )
         }
 
@@ -110,7 +112,7 @@ fun HomeScreen(
                             .fillMaxSize()
                             .wrapContentHeight()
                             .padding(16.dp),
-                        text = "Belum ada Wishlist ditambahkan",
+                        text = stringResource(R.string.belum_ada_wishlist_ditambahkan),
                         style = MaterialTheme.typography.headlineLarge,
                         fontWeight = FontWeight.SemiBold,
                         textAlign = TextAlign.Center,

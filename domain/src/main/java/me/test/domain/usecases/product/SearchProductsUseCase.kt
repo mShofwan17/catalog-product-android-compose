@@ -10,8 +10,8 @@ import javax.inject.Inject
 
 class SearchProductsUseCase @Inject constructor(
     private val repository: ProductRepository
-): BaseUseCase() {
-    suspend operator fun invoke(name: String) : Flow<ResponseState<List<UiListProduct>>>{
+) : BaseUseCase() {
+    suspend operator fun invoke(name: String): Flow<ResponseState<List<UiListProduct>>> {
         return doFlow {
             val items = repository.searchProducts(name).map { it.toListProduct() }
             emit(ResponseState.Success(items))

@@ -16,6 +16,6 @@ class ProductRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getDetailProduct(id: Long): Product {
-       return dataSource.getDetailProduct(id)
+        return dataSource.getDetailProduct(id)
     }
 }

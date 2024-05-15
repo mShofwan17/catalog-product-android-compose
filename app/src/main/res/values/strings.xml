@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">catalog-product-test</string>
+    <string name="app_name">Sneakers</string>
     <string name="icon_button">icon_button</string>
     <string name="hapus_dari_favorit">Hapus dari Favorit</string>
     <string name="tambahkan_ke_favorit">Tambahkan ke Favorit</string>
     <string name="image_url">image_url</string>
     <string name="half_black">half_black</string>
     <string name="ic_back">ic_back</string>
+    <string name="cari_produk">Cari Produk</string>
+    <string name="belum_ada_wishlist_ditambahkan">Belum ada Wishlist ditambahkan</string>
+    <string name="ic_fav">ic_fav</string>
+    <string name="produk_tersedia">%1$s produk tersedia</string>
+    <string name="ic_close">ic_close</string>
+    <string name="ic_search">ic_search</string>
 </resources>

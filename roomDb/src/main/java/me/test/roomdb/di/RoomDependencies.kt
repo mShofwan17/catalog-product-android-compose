@@ -8,5 +8,5 @@ import me.test.roomdb.CatalogProductDatabase
 @EntryPoint
 @InstallIn(SingletonComponent::class)
 interface RoomDependencies {
-    fun provideDatabase() : CatalogProductDatabase
+    fun provideDatabase(): CatalogProductDatabase
 }

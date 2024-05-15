@@ -18,14 +18,15 @@ object RepositoryModule {
     @Singleton
     fun proideProductRepository(
         dataSource: ProductDataSource
-    ) : ProductRepository {
+    ): ProductRepository {
         return ProductRepositoryImpl(dataSource)
     }
+
     @Provides
     @Singleton
     fun proideWishlistRepository(
         dataSource: ProductDataSource
-    ) : WishlistRepository {
+    ): WishlistRepository {
         return WishlistRepositoryImpl(dataSource)
     }
 }

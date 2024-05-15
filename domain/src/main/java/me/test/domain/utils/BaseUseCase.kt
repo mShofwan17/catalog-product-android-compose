@@ -11,7 +11,7 @@ open class BaseUseCase {
     suspend fun <T> doFlow(
         coroutineContext: CoroutineContext = Dispatchers.IO,
         block: suspend FlowCollector<ResponseState<T>>.() -> Unit
-    ) : Flow<ResponseState<T>> {
+    ): Flow<ResponseState<T>> {
         return flow {
             emit(ResponseState.Loading())
             try {
