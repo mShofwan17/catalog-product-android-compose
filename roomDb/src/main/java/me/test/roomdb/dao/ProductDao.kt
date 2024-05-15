@@ -22,7 +22,7 @@ interface ProductDao {
     @Query("SELECT * FROM tb_product WHERE id=:id")
     suspend fun getDetailProduct(id: Long): ProductEntity
 
-    @Query("SELECT * FROM tb_product WHERE name LIKE :name || '%'")
+    @Query("SELECT * FROM tb_product WHERE name LIKE '%'|| :name || '%'")
     suspend fun searchProducts(name: String): List<ProductEntity>
 
 
