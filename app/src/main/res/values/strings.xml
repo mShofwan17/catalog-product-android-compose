@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">catalog-product-test</string>
+    <string name="icon_button">icon_button</string>
+    <string name="hapus_dari_favorit">Hapus dari Favorit</string>
+    <string name="tambahkan_ke_favorit">Tambahkan ke Favorit</string>
+    <string name="image_url">image_url</string>
+    <string name="half_black">half_black</string>
+    <string name="ic_back">ic_back</string>
+</resources>
